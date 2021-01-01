@@ -17,3 +17,15 @@ $ npm app.js
 
 $ cd Frontend
 $ ng serve --open 
+```
+
+## Changes to make:
+
+  Download the geckodriver.exe from the repository and move it to the C drive root folder.
+  Then run the test case code.py file
+  
+### This test case code will run only if you have Mozilla Firefox.
+
+
+   # Thankyou
+

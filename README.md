@@ -16,4 +16,4 @@ $ cd Backend
 $ npm app.js
 
 $ cd Frontend
-$ ng serve --open
+$ ng serve --open 

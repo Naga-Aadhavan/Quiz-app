@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
+button.btn-submit{
+    width: 100%;
+}
+
+ul.answer li:hover{
+    background-color: #26a69a;
+    color: #eafaf9;
+    cursor: pointer;
+}
+
+ul li.selected{
+    background-color: #26a69a !important;
+    color: #eafaf9 !important;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius : 7px;
+  }
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+.container {
+    padding: 2px 16px;
+    border-radius: 6px;
+  }
+
+  div.card{
+    background-color : #b6ddee;
+    border-radius: 10px;
+}
+html{
+    background-color: #06549e;
+}

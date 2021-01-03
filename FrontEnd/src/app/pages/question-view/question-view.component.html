@@ -18,17 +18,17 @@
       
         <div class="card-content white-text">
          
-          <p class="card-title">{{questions[qnProgress].question_no}}.{{questions[qnProgress].question}}</p>
+          <p class="card-title">{{qnProgress}}.{{questions[nextQn].question}}</p>
           
         </div>
         <div class="card-action" >
           <ul class="collection answer">
               <p align="center">
             
-              <button name="button1" type="button" class="block" [disabled]="answerDone" (click)="answered(questions[qnProgress].option1)">{{questions[qnProgress].option1}}</button><br>
-              <button  type="button" class="block" [disabled]="answerDone" (click)="answered(questions[qnProgress].option2)">{{questions[qnProgress].option2}}</button><br>
-              <button  type="button" class="block" [disabled]="answerDone"  (click)="answered(questions[qnProgress].option3)">{{questions[qnProgress].option3}}</button><br>
-              <button  type="button" class="block"  [disabled]="answerDone" (click)="answered(questions[qnProgress].option4)">{{questions[qnProgress].option4}}</button><br>
+              <button name="button1" type="button" class="block" [disabled]="answerDone" (click)="answered(questions[nextQn].option1)">{{questions[nextQn].option1}}</button><br>
+              <button name="button2" type="button" class="block" [disabled]="answerDone" (click)="answered(questions[nextQn].option2)">{{questions[nextQn].option2}}</button><br>
+              <button name="button3" type="button" class="block" [disabled]="answerDone"  (click)="answered(questions[nextQn].option3)">{{questions[nextQn].option3}}</button><br>
+              <button name="button4" type="button" class="block"  [disabled]="answerDone" (click)="answered(questions[nextQn].option4)">{{questions[nextQn].option4}}</button><br>
              </p>
           </ul>
           <ng-container >
@@ -36,7 +36,7 @@
             <span class="notice" *ngIf="answerDone && (correctAnswer==1)">  &nbsp;&nbsp;&nbsp;&nbsp;CORRECT ANSWER</span>
         
             <span class="notice" *ngIf="answerDone && (correctAnswer==2)">  &nbsp;&nbsp;&nbsp;&nbsp;INCORRECT ANSWER<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;CORRECT ANSWER : {{questions[qnProgress].answer}}
+              &nbsp;&nbsp;&nbsp;&nbsp;CORRECT ANSWER : {{questions[nextQn].answer}}
             </span>
         </ng-container>
 

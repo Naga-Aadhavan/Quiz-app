@@ -13,17 +13,22 @@ import {DisplayService} from 'src/app/display.service';
 export class QuestionViewComponent implements OnInit {
   questions : Quizes[]=[];
  // questionindex: Quizes;
-  private qnProgress: number=0;
+  private qnProgress: number=1;
   private correctAnswerCount: number = 0;
   score:number=0;
   private loopLength:number;
   private answerDone :boolean=false;
   private correctAnswer:number=0;
+  private nextQn:number=0;
+  //private arr:Array<number>(10).fill(0);
+  private arr:Number[]=[this.questions.length];
   constructor(private router:Router,private displayService:DisplayService ) { }
 
   ngOnInit() {
      this.displayService.getQuestions()
         .subscribe((questions : Quizes[])=>this.questions=questions );
+      
+  
 
     this.loopLength=this.questions.length;
    
@@ -41,25 +46,44 @@ export class QuestionViewComponent implements OnInit {
     return this.qnProgress;
   }
 
-  decreaseQnProgress(){
+  randomInteger(min :number, max:number) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+
+
+  increaseQnProgress(){
+   /* for(var i=0;i<this.questions.length;i++){
+      this.arr[i]=0;
+    }*/
+    this.arr[0]=1;  
+    while(true){
+     var num:number=this.randomInteger(1,this.questions.length);
+     if(this.arr[num]!=1){
+       this.arr[num]=1;
+       this.nextQn=num-1;
+       break;
+     }
+
+    }
     this.qnProgress++;
     this.answerDone=false;
     this.correctAnswer=0;
-    if(this.getQnProgress()==this.questions.length){
+    if(this.getQnProgress()==11){
       this.displayService.mark=this.score;
-      this.displayService.total=this.questions.length;
+      this.displayService.total=10;
 
       this.router.navigate(['/result']);
   }
   }
 
   onClick(){
-    this.decreaseQnProgress();
+    this.increaseQnProgress();
   }
 
   answered(answer : string){
     
-    if(answer===this.questions[this.qnProgress].answer){
+    if(answer===this.questions[this.nextQn].answer){
       this.score++;
       this.correctAnswer=1;
     }
@@ -71,7 +95,7 @@ export class QuestionViewComponent implements OnInit {
     //this.onClick();
     this.answerDone=true;
 
-    if(this.getQnProgress()==this.questions.length){
+    if(this.getQnProgress()==10){
         this.displayService.mark=this.score;
         this.displayService.total=this.questions.length;
 

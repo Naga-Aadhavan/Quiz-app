@@ -97,7 +97,7 @@ export class QuestionViewComponent implements OnInit {
 
     if(this.getQnProgress()==10){
         this.displayService.mark=this.score;
-        this.displayService.total=this.questions.length;
+        this.displayService.total=10;
 
         this.router.navigate(['/result']);
     }

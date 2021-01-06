@@ -27,8 +27,11 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1609692374430	Marionette	INFO	Listening on port 56203
 1609692374832	Marionette	WARN	TLS certificate errors will be ignored for this session
-1609692409411	geckodriver	INFO	Listening on 127.0.0.1:56276
-1609692412488	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\aaadh\\AppData\\Local\\Temp\\rust_mozprofileOW3O2f"
+1609693464185	Marionette	INFO	Stopped listening on port 56203
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+"--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\aaadh\\AppData\\Local\\Temp\\rust_mozprofileOW3O2f"
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
 1609692414679	Marionette	INFO	Listening on port 56284
 JavaScript error: resource://activity-stream/lib/ASRouter.jsm, line 987: NS_ERROR_ILLEGAL_VALUE: Component returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIObserverService.removeObserver]
